@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KHELO BD TOUR 2</title>
+  <meta name="description" content="Join the best Free Fire tournaments with Victory Grounds. Play for fun or win big! Download now.">
+  <meta property="og:title" content="KHELO BD TOUR 2">
+  <meta property="og:description" content="Join exciting Free Fire tournaments. Both paid and free tournaments available.">
+  <meta property="og:image" content="https://da.gd/BOV7V">
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Poppins&display=swap" rel="stylesheet">
+  <style>
+@media (max-width: 768px) {
+  .top-section {
+    padding: 40px 10px;  /* Reduced padding for mobile */
+  }
+
+  .header h1 {
+    font-size: 2.5em;  /* Adjusted font size for mobile */
+  }
+}
+@media (max-width: 768px) {
+  .player {
+    font-size: 14px;
+    margin-bottom: 15px;  /* More space between player rows */
+  }
+
+  .player .rank, .player .name, .player .matchplayed {
+    font-size: 16px;  /* Adjust font size for readability */
+  }
+}
+@media (min-width: 1024px) {
+  .footer {
+    padding: 30px;  /* More padding for larger screens */
+  }
+}
+    /* General Styles */
+    body {
+      background: url('https://da.gd/aOXrC') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
+      font-family: 'Roboto', sans-serif;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+    }
+
+    .content { text-align: center; max-width: 1200px; width: 100%; position: relative; z-index: 2; }
+
+/* Header Section */
+.top-section {
+    width: 100%;
+    max-width: 800px; /* Limits the width to match other sections */
+    margin: 0 auto;
+    padding: 50px 20px;
+    background: rgba(0, 0, 50, 0.4); /* Dark blue transparent background */
+    position: relative;
+    text-align: center; /* Centers all content within */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* Header Content */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.header img {
+    width: 250px;
+    height: auto;
+    margin-bottom: 15px;
+    max-width: 100%;
+}
+
+.header h1 {
+    font-family: 'Russo One', sans-serif;
+    font-size: 3em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: orange; /* Ensures title is visible on dark background */
+    margin-top: 20px;
+}
+
+/* Divider */
+.divider {
+    width: 80%;
+    height: 2px;
+    margin: 20px auto;
+    background: linear-gradient(to right, #ff7f50, transparent, #ff7f50);
+    opacity: 0.8;
+}
+
+/* Main Title */
+.main-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff7f50, #ff6347);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 30px 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* App Preview */
+.app-preview {
+    display: flex;
+    justify-content: center; /* Centers the app preview image */
+    width: 100%;
+}
+
+.app-preview img {
+    width: 350px;
+    border-radius: 20px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    margin: 20px ;
+    max-width: 100%;
+}
+
+/* Button */
+.download-button {
+    background-color: #ff7f50;
+    color: #0a1f44;
+    padding: 20px 20px;
+    font-size: 1.5em;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px; /* Adds space above the button */
+    transition: transform 0.3s, background-color 0.3s;
+    text-align: center;
+}
+
+.download-button:hover {
+    transform: scale(1.05);
+    background-color: #ff6347;
+}
+    /* Leaderboard */
+/* Global Reset to prevent default styling issues */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0d0d2b;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column; /* Ensure header and leaderboard stack vertically */
+}
+
+/* Title */
+.leaderboard h2 {
+    color: #ff7f50;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Premium Underline Effect */
+.leaderboard h2::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(#ff6347, #ff7f50);
+    border-radius: 5px;
+}
+
+/* Leaderboard Section */
+.leaderboard {
+    width: 80%;
+    max-width: 800px;
+    background-color: rgba(13, 13, 43, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: white;
+    margin-top: 60px; /* Increased space between header and leaderboard section */
+}
+
+/* Player Rows Styling */
+.player {
+    background-color: #2c2c3e; /* Darker background for player rows */
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* For Player 1 (Gold) */
+.player.gold {
+    background-color: #b8860b; /* Solid Darker Gold */
+}
+
+/* For Player 2 (Platinum) */
+.player.platinum {
+    background-color: #708090; /* Darker Platinum */
+}
+
+/* For Player 3 (Silver) */
+.player.silver {
+    background-color: #a9a9a9; /* Darker Silver */
+}
+
+/* Hover Effects */
+.player:hover {
+    background-color: #444;  /* Darken the background when hovered */
+    transform: scale(1.05);  /* Slight scaling on hover */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);  /* Stronger shadow on hover */
+    cursor: pointer;
+}
+
+/* Align Rank, Name, matchplayed */
+.player .rank,
+.player .name,
+.player .matchplayed {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    flex: 1;
+}
+
+/* Simple Media Query */
+@media (max-width: 600px) {
+    .leaderboard {
+        width: 95%;
+    }
+
+    .player {
+        font-size: 14px;
+    }
+}
+    /* Benefits */
+    .bottom-section {
+      width: 100%; max-width: 800px; /* Limits the width to match the header */
+      background: transparent;
+      padding: 30px 0;
+      margin-top: 40px;
+    }
+    .benefits {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 10px;
+      background: rgba(10, 10, 10, 0.7);
+      border-radius: 10px;
+      font-size: 1.2em;
+      color: #e0e0e0;
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    .benefits h2 {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #ff7f50;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .benefits p {
+      display: flex;
+      align-items: center;
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+
+    .benefits p::before {
+      content: '✓';
+      color: #ff7f50;
+      margin-right: 8px;
+      font-weight: bold;
+    }
+
+/* Video Section Updates */
+.videos {
+  width: 100%; max-width: 800px; /* Limits the width to match the header */
+  margin: 30px auto;
+  padding: 20px;
+  background: rgba(0, 0, 50, 0.6);
+  border-radius: 10px;
+}
+
+.videos h2 {
+  font-size: 1.8em;
+  color: #ff7f50;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.video-wrapper {
+  width: 100%;
+  margin: 15px 0;
+  padding-bottom: 56.25%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Add space between the titles and videos */
+.videos h3 {
+  font-size: 1.3em;
+  color: #ffffff;
+  margin-top: 20px; /* Add more space between the title of the second video */
+}
+
+.spacer {
+  height: 40px; /* Create additional space between the two videos */
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1d1e2c; /* Dark blue background */
+    color: #fff; /* White text color */
+    margin: 0;
+    padding: 20px;
+}
+
+/* FAQ Section */
+.faq {
+  width: 100%; max-width: 800px; /* Limits the width to match the header */
+  margin: 40px 0; 
+  padding: 30px;
+  background: rgba(0, 0, 50, 0.7); /* Dark Blue Transparent Background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.faq h2 {
+  text-align: center;
+  color: #ff7f50; /* Orange Color */
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.3); /* Slightly darker background for each FAQ item */
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #34495e; /* Border color */
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  background-color: rgba(0, 0, 50, 0.5); /* Slight background change on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.faq-question {
+  font-size: 1.4rem;
+  color: #1abc9c; /* Teal Color */
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.faq-question:hover {
+  color: #f39c12; /* Change to orange on hover */
+  transform: translateX(10px); /* Smooth shift on hover */
+}
+
+.faq-answer {
+  display: none; /* Hidden by default */
+  font-size: 1rem;
+  color: #bdc3c7; /* Light Gray Color */
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+.faq-item.active .faq-answer {
+  display: block; /* Show when active */
+}
+
+.faq-item.active .faq-question {
+  color: #f39c12; /* Change question color to orange when active */
+}
+
+.faq-item .toggle-icon {
+  font-size: 1.5rem;
+  color: #bdc3c7;
+  margin-right: 15px; /* Add space between icon and question text */
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .toggle-icon {
+  transform: rotate(45deg); /* Rotate icon when expanded */
+}
+
+.faq-item .toggle-icon {
+  font-weight: bold; /* Make the icon bold */
+}
+/* Social Media Links */
+.social-links {
+  display: flex;
+  gap: 60px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(0, 0, 50, 0.4); /* Dark blue transparent background */
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%; /* Ensures the section takes full width */
+  max-width: 800px; /* Limits the width to match the header */
+  margin-left: auto;
+  margin-right: auto; /* Centers the section */
+}
+/* Individual Sections */
+.social-links div {
+  text-align: center;
+  flex: 1;
+  min-width: 200px;
+}
+
+.social-links h3 {
+  font-size: 1.5em;
+  color: #ff7f50;
+  margin-bottom: 20px;
+}
+
+.social-links a {
+  margin: 10px;
+}
+
+.social-links a img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s;
+}
+
+.social-links a:hover img {
+  transform: scale(1.2);
+}
+
+/* Premium Underline for Specific Titles */
+.benefits h2::after,
+.videos h2::after,
+.faq h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Closer to the title */
+  width: 100%; /* Full width under the title */
+  height: 4px;
+  background: linear-gradient(90deg, #ff7f50, #ff6347);
+  border-radius: 2px;
+}
+
+.benefits h2, 
+.videos h2, 
+.faq h2 {
+  position: relative;
+  padding-bottom: 10px; /* Reduced padding */
+}
+
+/* Underline specifically for Join Us and Contact for Support */
+.social-links h3 {
+  position: relative;
+  padding-bottom: 10px; /* Reduced padding to bring the underline closer */
+  text-align: center;
+}
+
+.social-links h3::after {
+  content: '';
+  position: absolute;
+  left: 50%; /* Center alignment */
+  bottom: -2px; /* Closer to the title */
+  width: 60%; /* Underline width for visual balance */
+  height: 4px;
+  background: linear-gradient(90deg, #ff7f50, #ff6347);
+  border-radius: 2px;
+  transform: translateX(-50%); /* Center the underline */
+}
+    /* Footer */
+    .footer {
+      width: 100%; max-width: 800px; /* Limits the width to match the header */
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 50, 0.5);
+      color: #ffffff;
+      font-size: 1.1em;
+      margin-top: 40px;
+      font-family: 'Poppins', sans-serif;
+    }
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #FFA500; /* Orange title color */
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Images and Videos */
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav li {
+    margin: 0 15px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    transition: background-color 0.3s;
+}
+
+.nav a:hover {
+    background-color: #FFA500; /* Hover effect */
+    border-radius: 5px;
+}
+
+/* Social Media Icons Section */
+.social-links {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-top: 20px;
+    width: 100%; /* Ensures the section takes full width */
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #333;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin: 0 10px; /* Space between icons */
+}
+
+.social-links a:hover {
+    background-color: #FFA500; /* Hover effect */
+}
+
+/* Responsive Styles */
+
+/* Medium Screen (Tablets, up to 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Small Screen (Phones, up to 768px) */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    /* Toggle menu button for mobile */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: white;
+        padding: 0.5rem;
+    }
+
+    .nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Show the menu when toggle is active */
+    .menu-toggle:checked + .nav ul {
+        display: flex;
+    }
+}
+/* Basic reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body overflow fix */
+body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Container width fix */
+.container, img {
+    max-width: 100%; /* Ensure containers and images don't exceed viewport width */
+}
+
+/* General section fix */
+.section {
+    overflow-x: hidden; /* Prevent overflow in sections using flexbox or grid */
+}
+
+/* Center-align social media icons horizontally */
+.social-icons {
+    display: flex;
+    justify-content: center; /* Horizontally center the icons */
+    align-items: center;     /* Vertically center the icons */
+    gap: 10px;               /* Space between icons */
+}
+
+/* Additional layout adjustments if needed */
+.wrapper {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 100%;
+}
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <div class="top-section">
+    <div class="content">
+      <div class="header">
+        <img src="https://da.gOV7V" alt="KHELO BD TOUR 2">
+        <h1>KHELO BD TOUR 2</h1>
+      </div>
+      <div class="divider"></div>
+      <h2 class="main-title">Join Free Fire Tournaments, Win Big!</h2>
+      <div class="app-preview">
+        <img src="htt" alt="App Preview">
+      </div>
+      <a href="https://github.com/asim8485/L-ink/raw/refs/heads/main/Khelo%20FF%20Tour%202.apk" class="download-button">Download Now</a>
+    </div>
+  </div>
+    <!-- Leaderboard Section -->
+<section class="leaderboard">
+    <h2>Top Players</h2>
+
+    <div class="player gold">
+        <span class="rank">Rank</span>
+        <span class="name">Player Name</span>
+        <span class="matchplayed">Match Played</span>
+    </div>
+
+    <div class="player platinum">
+        <span class="rank">1</span>
+        <span class="name"></span>
+        <span class="matchplayed"></span>
+    </div>
+
+    <div class="player silver">
+        <span class="rank">2</span>
+        <span class="name"></span>
+        <span class="matchplayed"></span>
+    </div>
+
+    <div class="player">
+        <span class="rank">3</span>
+        <span class="name"></span>
+        <span class="matchplayed"></span>
+    </div>
+
+    <div class="player">
+        <span class="rank">4</span>
+        <span class="name"></span>
+        <span class="matchplayed"></span>
+    </div>
+</section>
+  <!-- Benefits Section -->
+  <div class="bottom-section">
+    <div class="benefits">
+      <h2>আমাদের সুবিধাসমূহ
+
+</h2>
+      <p>Add Money request ৫-১০ মিনিটের মধ্যে কনফার্ম করা হবে।</p>
+      <p>Withdraw Request প্রতিদিন রাত ১২টার মধ্যে প্রসেস করা হবে।</p>
+      <p>যদি কোন match-এ নেট সমস্যা বা অন্য কোনো কারণে match-এ যোগ দিতে না পারেন, আমাদের support-এ জানালে আমরা refund দিয়ে দেব।</p>
+      <p>আমাদের অ্যাপে সাপ্তাহিক free tournament থাকবে। এছাড়া বিভিন্ন উৎসব উপলক্ষে special match এবং free match আয়োজন করা হবে।</p>
+    <p>আমাদের support সকাল ৮টা থেকে রাত ১২টা পর্যন্ত active থাকবে। মেসেজ দেওয়ার সর্বোচ্চ ২০-৩০ মিনিটের মধ্যে আমরা উত্তর দেব।</p>
+    <p>আমাদের অ্যাপে আপনি চাইলে late night tournaments খেলতে পারবেন। অর্থাৎ রাত ১২টার পরে থেকে ভোর ৩টা পর্যন্ত user-দের অনুরোধ অনুযায়ী match আয়োজন করা হবে।</p>
+    <p>আমাদের সাথে যোগাযোগ করে আপনি custom match খেলতে পারবেন। অর্থাৎ কোনো squad-এর সাথে bet করে, আমরা ন্যূনতম commission-এর মাধ্যমে আপনার match arrange করে দেব।</p>
+    <p>প্রতি মাসে সবচেয়ে বেশি match played করা player-কে ৫০ টাকা bonus দেওয়া হবে।</p>
+    </div>
+  </div>
+
+<!-- Video Section -->
+<div class="videos fade-in">
+  <h2>আমাদের টিউটোরিয়াল ভিডিওগুলো দেখুন</h2>
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/example_video1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <h3>আমাদের অ্যাপে টাকা কিভাবে যোগ করবেন।</h3>
+  
+  <!-- Space between first title and 2nd video -->
+  <div class="spacer"></div>
+  
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/example_video2" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <h3>কিভাবে ম্যাচে জয়েন করবেন।</h3>
+</div>
+<div class="faq">
+  <h2>FAQs</h2>
+  <div class="faq-item">
+    <div class="faq-question">
+      <i class="toggle-icon">+</i> <!-- Icon for expand/collapse -->
+      <span>আপনি ম্যাচে জয়েন করতে পারেননি?</span>
+    </div>
+    <div class="faq-answer">
+      <p>আমাদের প্রতিটি ম্যাচের রুম আইডি ম্যাচ শুরু হওয়ার ৫ থেকে ৭ মিনিট আগে দেওয়া হয়। আপনাদের হাতে ম্যাচে জয়েন করার জন্য ৫-৭ মিনিট সময় থাকে, যা যথেষ্ট। তবে যদি তারপরও কোন সমস্যা থাকে এবং আপনি ম্যাচে জয়েন করতে না পারেন, তখন দয়া করে দ্রুত আমাদের লাইভ চ্যাটে ম্যাসেজ পাঠান। আপনি যেকোনো সময় আপনার সমস্যা আমাদের জানাতে পারেন, তবে ম্যাচ প্লে সংক্রান্ত সমস্যা শুরু হওয়ার ১-২ মিনিট আগে আমাদের জানানো প্রয়োজন। যদি ম্যাচ শুরু হওয়ার ১ মিনিট পর রিপোর্ট করেন, তবে আমরা সেই সমস্যার সমাধান করতে পারব না।</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <i class="toggle-icon">+</i>
+      <span>আপনারা কবে ফ্রি ম্যাচ আয়োজন করেন?</span>
+    </div>
+    <div class="faq-answer">
+      <p>আমরা প্রতি সপ্তাহে নিয়মিত ফ্রি ম্যাচ আয়োজন করি, যাতে আমাদের ব্যবহারকারীরা বিনামূল্যে খেলতে পারে এবং আকর্ষণীয় পুরস্কার জিততে পারে। এছাড়া, বিশেষ দিন বা উপলক্ষে কিছু বিশেষ ফ্রি ম্যাচও আয়োজন করা হয়, যেখানে আরও বড় পুরস্কার এবং উপহার দেওয়ার ব্যবস্থা থাকে।</p>
+    </div>
+  </div>
+
+  <!-- Add more questions and answers here -->
+</div>
+  <!-- Social Links -->
+<div class="social-links">
+  <!-- Join Us Section -->
+  <div>
+    <h3>Join Us</h3>
+    <a href="https://www.facebook.com/Victocial" target="_blank"><img src="https://da.gd/VuCY5g" alt="Facebook"></a>
+    <a href="https://www.instagram.com/victorygl" target="_blank"><img src="https://da.gd/HZqtQq" alt="Instagram"></a>
+    <a href="https://youtube.com/@khelobdtour2?si=vTi7oLgdmkEgnXfR" target="_blank"><img src="https://da.gd/CAcrQ" alt="YouTube"></a>
+  </div>
+
+  <!-- Contact for Support Section -->
+  <div>
+    <h3>Contact for Support</h3>
+    <a href=://t.me/vi" target="_blank"><img src="https://da.gd/yAl8" alt="Telegram"></a>
+    <a href="https://wa.me/8801708709073" target="_blank"><img src="https://da.gd/GHrXE6" alt="WhatsApp"></a>
+  </div>
+</div>
+
+  <!-- Footer -->
+    <div class="footer">
+      <p>© 2024 KHELO BD TOUR 2 - All Rights Reserved.
+    </div>
+  </div>
+  <script>
+  const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+  const question = item.querySelector('.faq-question');
+  const toggleIcon = item.querySelector('.toggle-icon');
+
+  question.addEventListener('click', () => {
+    item.classList.toggle('active');  // Toggle active class to show/hide answer
+    toggleIcon.textContent = item.classList.contains('active') ? '-' : '+';  // Change icon to '-' when expanded, '+' when collapsed
+  });
+});
+</script>
+</body>
+</html>
